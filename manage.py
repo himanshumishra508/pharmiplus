@@ -1,7 +1,30 @@
 #!/usr/bin/env python
 import os
 import sys
+import time
 
+# A class that represents the individual node of the Binary tree
+class node:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.data = key
+
+
+# A function to display the leaf nodes.
+def counter(root):
+    if root:
+        if root.left == None and root.right == None:
+            print(root.data)
+        # First recur the left child
+        if root.left:
+            counter(root.left)
+        # Recur the right child at last
+        if root.right:
+            counter(root.right)
+
+
+# run the counter function while passing the root as the argument to print all the leaf nodes of a binary tree!
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mac.settings")
     try:
